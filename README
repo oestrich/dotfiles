@@ -1,11 +1,5 @@
 Installation:
-    git clone git://github.com/oestrich/vimrc.git ~/.vim
-
-Symlinks:
-    ln -s ~/.vim/vimrc ~/.vimrc
-
-Submodules:
-    cd ~/.vim
-    git submodule init
-    git submodule update
+    git clone git://github.com/oestrich/dotfiles.git ~/dotfiles
+    cd ~/dotfiles
+    ./init.sh
 
