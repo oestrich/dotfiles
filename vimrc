@@ -13,8 +13,13 @@ set pastetoggle=<F2>
 set autoindent
 set number
  
-set ts=2
+"set ts=2
+"set expandtab
+
+set ts=4
 set expandtab
+
+autocmd FileType ruby setlocal ts=2
  
 "Incremental search
 set incsearch
