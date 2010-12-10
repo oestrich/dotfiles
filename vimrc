@@ -19,8 +19,6 @@ set number
 set ts=4
 set expandtab
 
-autocmd FileType ruby setlocal ts=2
- 
 "Incremental search
 set incsearch
  
