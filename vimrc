@@ -10,14 +10,16 @@ set nocompatible
 
 set pastetoggle=<F2>
  
-set autoindent
 set number
  
 "set ts=2
 "set expandtab
 
-set ts=4
 set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+set autoindent
 
 "Incremental search
 set incsearch
