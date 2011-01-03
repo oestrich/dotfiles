@@ -10,3 +10,6 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
 git submodule init
 git submodule update
+
+cd ~/dotfiles/vim/bundle/command-t/
+rake make
