@@ -8,6 +8,8 @@ ln -s ~/dotfiles/gvimrc ~/.gvimrc
 # tmux
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
+echo "source ~/dotfiles/bashrc" >> ~/.bashrc
+
 git submodule init
 git submodule update
 
