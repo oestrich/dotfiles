@@ -14,4 +14,5 @@ PS1="$GREEN\u@\h$NO_C:[$BLUE\w$NO_C]\$ "
 
 # Alias
 alias bookshare='cd ~/ruby/bookshare/'
+alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
 
