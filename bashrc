@@ -9,8 +9,10 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 NO_C='\[\033[00m\]'
 GREEN='\[\033[00;32m\]'
 BLUE='\[\033[00;34m\]'
+YELLOW='\[\033[00;33m\]'
+GITBRANCH='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\ \(\\\\\1\)/`'
 
-PS1="$GREEN\u@\h$NO_C:[$BLUE\w$NO_C]\$ "
+PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 
 # Alias
 alias bookshare='cd ~/ruby/bookshare/'
