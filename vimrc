@@ -17,9 +17,9 @@ set number
 "set expandtab
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 set autoindent
 
