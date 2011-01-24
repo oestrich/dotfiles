@@ -11,6 +11,9 @@ ln -s ~/dotfiles/gitconfig ~/.gitconfig
 # tmux
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
+# gemrc
+ln -s ~/dotfiles/gemrc ~/.gemrc
+
 echo "source ~/dotfiles/bashrc" >> ~/.bashrc
 
 git submodule init
