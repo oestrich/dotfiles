@@ -47,6 +47,7 @@ if [ ! -e ~/dotfiles/vim/bundle/command-t/ruby/command-t/ext.so ]; then
       echo
       echo !!!!!!!!!!!!!!!!!!!!!!!!!!!
       echo
+      exit
     fi
   fi
 
