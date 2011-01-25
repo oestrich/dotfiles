@@ -14,6 +14,9 @@ GITBRANCH='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\ 
 
 PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 
+# Export
+export AUTOFEATURE=true
+
 # Alias
 alias bookshare='cd ~/ruby/bookshare/'
 alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
