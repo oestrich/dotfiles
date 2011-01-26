@@ -20,4 +20,5 @@ export AUTOFEATURE=true
 # Alias
 alias bookshare='cd ~/ruby/bookshare/'
 alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+alias raket='RAILS_ENV=test rake'
 
