@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/eric/ruby/til/db/migrate'
 let g:netrw_dirhist_2='/home/eric/ruby/til'
 let g:netrw_dirhist_3='/home/eric'
 let g:netrw_dirhist_4='/home/eric/ruby/til/features'
+let g:netrw_dirhist_5='/media/VBOXADDITIONS_4.0.0_69151'
+let g:netrw_dirhist_6='/home/eric'
