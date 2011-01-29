@@ -22,8 +22,10 @@ export AUTOFEATURE=true
 #
 # Alias
 #
-alias bookshare='cd ~/ruby/bookshare/'
-alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+distribution=$(lsb_release -i)
+if [[ "$distribution" =~ Ubuntu ]]; then
+  alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+fi
 alias raket='RAILS_ENV=test rake'
 
 #
