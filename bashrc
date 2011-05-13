@@ -1,7 +1,16 @@
 #
-# Path
+# Homebrew
 #
-PATH=$PATH:/var/lib/gems/1.8/bin
+if command -v sw_vers &>/dev/null; then
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
+
+#
+# Colorful terminal
+#
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 
 #
 # Prompt
@@ -22,9 +31,11 @@ export AUTOFEATURE=true
 #
 # Alias
 #
-distribution=$(lsb_release -i)
-if [[ "$distribution" =~ Ubuntu ]]; then
-  alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+if command -v lsb_release &>/dev/null ; then
+  distribution=$(lsb_release -i)
+  if [[ "$distribution" =~ Ubuntu ]]; then
+    alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
+  fi
 fi
 alias raket='RAILS_ENV=test rake'
 
