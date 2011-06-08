@@ -27,6 +27,7 @@ PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 # Export
 #
 export AUTOFEATURE=true
+export CUCUMBER_FORMAT=progress
 
 #
 # Alias
@@ -37,7 +38,9 @@ if command -v lsb_release &>/dev/null ; then
     alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
   fi
 fi
+alias rake='bundle exec rake'
 alias raket='RAILS_ENV=test rake'
+alias cucumber='bundle exec cucumber'
 
 #
 # Git autocomplete
