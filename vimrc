@@ -12,6 +12,8 @@ set nocompatible
 set pastetoggle=<F2>
  
 set number
+
+set foldmethod=syntax
  
 
 "
@@ -55,6 +57,7 @@ map <Leader>, :NERDTreeToggle<CR>
 map <Leader>t :CommandT<CR>
 map <Leader>f :CommandTFlush<CR>
 map <Leader>b :BufExplorer<CR>
+map <Leader>a :Ack 
 
 let g:CommandTMaxHeight=20
 
