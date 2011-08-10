@@ -1,4 +1,9 @@
 #
+# vi command prompt
+#
+set -o vi
+
+#
 # Homebrew
 #
 if command -v sw_vers &>/dev/null; then
@@ -27,7 +32,6 @@ PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 # Export
 #
 export AUTOFEATURE=true
-export CUCUMBER_FORMAT=progress
 
 #
 # Alias
@@ -41,6 +45,7 @@ fi
 alias rake='bundle exec rake'
 alias raket='RAILS_ENV=test rake'
 alias cucumber='bundle exec cucumber'
+alias rspec='bundle exec rspec'
 
 #
 # Git autocomplete

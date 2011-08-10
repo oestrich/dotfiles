@@ -28,6 +28,7 @@ set autoindent
 
 "Incremental search
 set incsearch
+set hlsearch
  
 "
 " Backup files
