@@ -10,11 +10,16 @@ let mapleader = ","
 set nocompatible
 
 set pastetoggle=<F2>
- 
+
 set number
 
 set foldmethod=syntax
- 
+
+"
+" Show trailing spaces
+"
+set listchars=tab:»·,trail:·
+set list
 
 "
 " Tabs
@@ -29,21 +34,21 @@ set autoindent
 "Incremental search
 set incsearch
 set hlsearch
- 
+
 "
 " Backup files
 "
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-  
+
 "No noise
 set noerrorbells
-   
+
 set wildmenu
-    
+
 set scrolloff=10
-     
+
 set foldmethod=syntax
 set foldlevel=100
 
