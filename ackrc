@@ -1,5 +1,6 @@
 --type-add=ruby=.erb,.haml,.sass,.rake 
 --type-set=haml=.haml 
 --type-set=sass=.sass
+--type-set=cucumber=.feature
 --smart-case
 
