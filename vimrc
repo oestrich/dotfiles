@@ -64,6 +64,7 @@ map <Leader>t :CommandT<CR>
 map <Leader>f :CommandTFlush<CR>
 map <Leader>b :BufExplorer<CR>
 map <Leader>a :Ack 
+map <Leader><Space> :noh<CR>
 
 let g:CommandTMaxHeight=20
 
