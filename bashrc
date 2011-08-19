@@ -51,3 +51,8 @@ alias rspec='bundle exec rspec'
 # Git autocomplete
 #
 source ~/dotfiles/git-complete.sh
+
+#
+# For custom scripts
+#
+export PATH=~/dotfiles/bin:$PATH

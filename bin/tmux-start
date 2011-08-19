@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmux new-session -d -s riker
+tmux new-window -t riker:1
+tmux new-window -t riker:2
+
+tmux select-window -t riker:0
