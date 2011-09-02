@@ -16,6 +16,11 @@ set number
 set foldmethod=syntax
 
 "
+" Colorscheme
+"
+colorscheme impact
+
+"
 " Show trailing spaces
 "
 set listchars=tab:»·,trail:·
