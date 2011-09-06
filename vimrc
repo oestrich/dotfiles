@@ -18,7 +18,8 @@ set foldmethod=syntax
 "
 " Colorscheme
 "
-colorscheme impact
+set background=dark
+colorscheme solarized
 
 "
 " Show trailing spaces
