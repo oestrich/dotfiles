@@ -72,8 +72,13 @@ map <Leader>b :BufExplorer<CR>
 map <Leader>a :Ack 
 map <Leader><Space> :noh<CR>
 
-let g:CommandTMaxHeight=20
+" Tabs
+map <c-w>t :tabnew<CR>
+map <Leader>p :tabnext<CR>
+map <Leader>o :tabprev<CR>
 
+" CommandT
+let g:CommandTMaxHeight=20
 
 "
 " Rails
