@@ -1,12 +1,13 @@
 #!/bin/bash
 
 cd ~/
-tmux new-session -d -s riker-work
-tmux new-window -t riker-work:1
-tmux new-window -t riker-work:2
-tmux select-window -t riker-work:0
+host=`hostname -s`
+tmux new-session -d -s ${host}-work
+tmux new-window -t ${host}-work:1
+tmux new-window -t ${host}-work:2
+tmux select-window -t ${host}-work:0
 
-tmux new-session -d -s riker
-tmux new-window -t riker:1
-tmux new-window -t riker:2
-tmux select-window -t riker:0
+tmux new-session -d -s ${host}
+tmux new-window -t ${host}:1
+tmux new-window -t ${host}:2
+tmux select-window -t ${host}:0
