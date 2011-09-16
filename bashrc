@@ -56,3 +56,33 @@ source ~/dotfiles/git-complete.sh
 # For custom scripts
 #
 export PATH=~/dotfiles/bin:$PATH
+
+#
+# Custom cds
+#
+_complete() {
+  local cur folders
+  COMREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  folders=`ls ~/prog/${1}/`
+  if [[ ${#COMP_WORDS[@]} -le 2 ]]; then
+    COMPREPLY=( $(compgen -W "${folders}" -- ${cur}) )
+    return 0
+  fi
+}
+
+_dcd() {
+  _complete divbot
+}
+dcd() {
+  cd ~/prog/divbot/$1
+}
+complete -F _dcd dcd
+
+_scd() {
+  _complete sls
+}
+scd() {
+  cd ~/prog/sls/$1
+}
+complete -F _scd scd
