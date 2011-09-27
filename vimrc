@@ -77,6 +77,8 @@ map <c-w>t :tabnew<CR>
 map <Leader>p :tabnext<CR>
 map <Leader>o :tabprev<CR>
 
+map K <Nop>
+
 " CommandT
 let g:CommandTMaxHeight=20
 
