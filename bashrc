@@ -86,3 +86,11 @@ scd() {
   cd ~/prog/sls/$1
 }
 complete -F _scd scd
+
+_rcd() {
+  _complete ruby
+}
+rcd() {
+  cd ~/prog/ruby/$1
+}
+complete -F _rcd rcd
