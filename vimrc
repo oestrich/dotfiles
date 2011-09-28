@@ -68,7 +68,7 @@ nnoremap <F3> :set nonumber!<CR>
 map <Leader>, :NERDTreeToggle<CR>
 map <Leader>t :CommandT<CR>
 map <Leader>f :CommandTFlush<CR>
-map <Leader>b :BufExplorer<CR>
+map <leader>m :BufExplorer<CR>
 map <Leader>a :Ack 
 map <Leader><Space> :noh<CR>
 
@@ -78,6 +78,12 @@ map <Leader>p :tabnext<CR>
 map <Leader>o :tabprev<CR>
 
 map K <Nop>
+
+" Splits
+map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
 
 " CommandT
 let g:CommandTMaxHeight=20
