@@ -44,7 +44,6 @@ if command -v lsb_release &>/dev/null ; then
 fi
 alias dotfiles='cd ~/dotfiles'
 alias rake='bundle exec rake'
-alias raket='RAILS_ENV=test rake'
 alias cucumber='bundle exec cucumber'
 alias rspec='bundle exec rspec'
 alias cap='bundle exec cap'
