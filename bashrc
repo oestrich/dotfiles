@@ -32,6 +32,7 @@ PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 # Export
 #
 export AUTOFEATURE=true
+export EDITOR='vim'
 
 #
 # Alias

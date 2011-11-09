@@ -25,3 +25,6 @@
     added = yellow
     changed = green
     untracked = cyan
+
+[alias]
+    full-stash = stash --include-untracked

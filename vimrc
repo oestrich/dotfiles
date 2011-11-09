@@ -58,6 +58,9 @@ set scrolloff=10
 set foldmethod=syntax
 set foldlevel=100
 
+" /g when searching and replacing
+set gdefault
+
 "
 " Remaps
 "
