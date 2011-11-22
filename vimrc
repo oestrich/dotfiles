@@ -80,7 +80,8 @@ map <c-w>t :tabnew<CR>
 map <Leader>p :tabnext<CR>
 map <Leader>o :tabprev<CR>
 
-map K <Nop>
+nnoremap K <Nop>
+noremap 0 ^
 
 " Splits
 map <c-h> <c-w>h
