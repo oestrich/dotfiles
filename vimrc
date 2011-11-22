@@ -97,6 +97,11 @@ map <S-E> <Plug>CamelCaseMotion_e
 " CommandT
 let g:CommandTMaxHeight=20
 
+" Kill help key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 "
 " Rails
 "
