@@ -26,6 +26,11 @@ if [ ! -e ~/.gemrc ]; then
   ln -s ~/dotfiles/gemrc ~/.gemrc
 fi
 
+# ackrc
+if [ ! -e ~/.ackrc ]; then
+  ln -s ~/dotfiles/ackrc ~/.ackrc
+fi
+
 # bashrc
 bashgrep=$(grep "source ~/dotfiles/bashrc" ~/.bashrc)
 if [ "$bashgrep" != "source ~/dotfiles/bashrc" ]; then

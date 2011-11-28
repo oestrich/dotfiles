@@ -108,6 +108,9 @@ vnoremap <Leader>s :s//c<left><left>
 nnoremap <Leader>d :s///c<left><left><left>
 vnoremap <Leader>d :s///c<left><left><left>
 
+" Source vimrc
+nnoremap <Leader>` :source $MYVIMRC<CR>
+
 "
 " Rails
 "
