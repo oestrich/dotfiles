@@ -102,6 +102,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Easy substitution
+nnoremap <Leader>s :s///c<left><left><left>
+vnoremap <Leader>s :s///c<left><left><left>
+
 "
 " Rails
 "
