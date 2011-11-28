@@ -103,8 +103,10 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Easy substitution
-nnoremap <Leader>s :s///c<left><left><left>
-vnoremap <Leader>s :s///c<left><left><left>
+nnoremap <Leader>s :s//c<left><left>
+vnoremap <Leader>s :s//c<left><left>
+nnoremap <Leader>d :s///c<left><left><left>
+vnoremap <Leader>d :s///c<left><left><left>
 
 "
 " Rails
