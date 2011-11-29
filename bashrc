@@ -57,7 +57,7 @@ source ~/dotfiles/git-complete.sh
 #
 # For custom scripts
 #
-export PATH=~/dotfiles/bin:$PATH
+export PATH=~/dotfiles/bin:~/sync/bin:$PATH
 
 #
 # Custom cds

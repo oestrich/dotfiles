@@ -61,6 +61,9 @@ set foldlevel=100
 " /g when searching and replacing
 set gdefault
 
+" disable autoload of session
+let g:session_autoload="no"
+
 "
 " Remaps
 "
