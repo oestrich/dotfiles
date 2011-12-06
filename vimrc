@@ -114,6 +114,9 @@ vnoremap <Leader>d :s///c<left><left><left>
 " Source vimrc
 nnoremap <Leader>` :source $MYVIMRC<CR>
 
+" Remove trailing whitespace
+nnoremap <Leader>ts :%s/\s\+$//<CR>
+
 "
 " Rails
 "
