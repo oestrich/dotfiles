@@ -85,6 +85,7 @@ map <Leader>p :tabnext<CR>
 map <Leader>o :tabprev<CR>
 
 nnoremap K <Nop>
+vnoremap K <Nop>
 noremap 0 ^
 
 " Splits
