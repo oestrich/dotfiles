@@ -89,10 +89,10 @@ scd() {
 }
 complete -F _scd scd
 
-_rcd() {
-  _complete ruby
+_srcd() {
+  _complete src
 }
-rcd() {
-  cd ~/prog/ruby/$1
+srcd() {
+  cd ~/prog/src/$1
 }
-complete -F _rcd rcd
+complete -F _srcd srcd
