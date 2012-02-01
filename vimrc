@@ -78,6 +78,7 @@ map <Leader>f :CommandTFlush<CR>
 map <leader>m :BufExplorer<CR>
 map <Leader>a :Ack 
 map <Leader><Space> :noh<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " Tabs
 map <c-w>t :tabnew<CR>
@@ -86,7 +87,6 @@ map <Leader>o :tabprev<CR>
 
 nnoremap K <Nop>
 vnoremap K <Nop>
-noremap 0 ^
 
 " Splits
 map <c-h> <c-w>h

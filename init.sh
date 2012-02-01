@@ -15,6 +15,9 @@ fi
 if [ ! -e ~/.gitconfig ]; then
   ln -s ~/dotfiles/gitconfig ~/.gitconfig
 fi
+if [ ! -e ~/.gitignore_global ]; then
+  ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
+fi
 
 # tmux
 if [ ! -e ~/.tmux.conf ]; then
