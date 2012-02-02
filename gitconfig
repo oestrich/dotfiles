@@ -4,7 +4,7 @@
 
 [core]
     editor = vim
-	excludesfile = /Users/eric/.gitignore_global
+    excludesfile = /Users/eric/.gitignore_global
 
 [color]
     branch = auto
@@ -29,3 +29,4 @@
 
 [alias]
     full-stash = stash --include-untracked
+    ll = log --oneline -n 5
