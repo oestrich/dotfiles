@@ -13,3 +13,5 @@ tmux split-window -h -t ${host}:0
 tmux new-window -t ${host}:1
 tmux new-window -t ${host}:2
 tmux select-window -t ${host}:0
+
+tmux attach -t ${host}-work
