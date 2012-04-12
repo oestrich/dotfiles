@@ -43,22 +43,3 @@ fi
 # Submodules
 git submodule init
 git submodule update
-
-if [ ! -e ~/dotfiles/vim/bundle/command-t/ruby/command-t/ext.so ]; then
-  if [ -e ~/.rvm/bin/rvm ]; then
-    rubyv=`type -P ruby`
-    if [ $rubyv != '/usr/bin/ruby' ]; then
-      echo
-      echo !!!!!!!!!!!!!!!!!!!!!!!!!!!
-      echo
-      echo rvm is installed, set ruby to system and rerun script!
-      echo
-      echo !!!!!!!!!!!!!!!!!!!!!!!!!!!
-      echo
-      exit
-    fi
-  fi
-
-  cd ~/dotfiles/vim/bundle/command-t/
-  rake make
-fi
