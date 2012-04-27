@@ -73,7 +73,6 @@ let g:session_autoload="no"
 " Toggle number
 nnoremap <F3> :set nonumber!<CR>
 
-map <Leader>, :NERDTreeToggle<CR>
 map <Leader>t :CommandT<CR>
 map <Leader>f :CommandTFlush<CR>
 map <leader>m :BufExplorer<CR>
