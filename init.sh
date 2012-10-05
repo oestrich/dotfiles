@@ -28,6 +28,9 @@ fi
 if [ ! -e ~/.gemrc ]; then
   ln -s ~/dotfiles/gemrc ~/.gemrc
 fi
+if [ ! -e ~/.irbrc ]; then
+  ln -s ~/dotfiles/irbrc ~/.irbrc
+fi
 
 # ackrc
 if [ ! -e ~/.ackrc ]; then

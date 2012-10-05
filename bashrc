@@ -1,4 +1,9 @@
 #
+# Ignore duplicates and lines that start with spaces in bash history
+#
+HISTCONTROL=ignorespace:ignoredups
+
+#
 # vi command prompt
 #
 set -o vi
