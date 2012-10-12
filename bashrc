@@ -53,6 +53,7 @@ alias rake='bundle exec rake'
 alias cucumber='bundle exec cucumber'
 alias rspec='bundle exec rspec'
 alias cap='bundle exec cap'
+alias pjson='python -mjson.tool'
 
 #
 # Git autocomplete
