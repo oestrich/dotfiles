@@ -5,6 +5,8 @@ syntax on
 filetype off
 filetype plugin indent on
 
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 let mapleader = ","
 
 set nocompatible
