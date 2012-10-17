@@ -37,6 +37,11 @@ if [ ! -e ~/.ackrc ]; then
   ln -s ~/dotfiles/ackrc ~/.ackrc
 fi
 
+# slate
+if [ ! -e ~/.slate ]; then
+  ln -s ~/dotfiles/slate ~/.slate
+fi
+
 # bashrc
 bashgrep=$(grep "source ~/dotfiles/bashrc" ~/.bashrc)
 if [ "$bashgrep" != "source ~/dotfiles/bashrc" ]; then

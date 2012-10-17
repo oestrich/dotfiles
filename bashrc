@@ -55,6 +55,7 @@ alias rspec='bundle exec rspec'
 alias cap='bundle exec cap'
 alias pjson='python -mjson.tool'
 alias dud='du -d 1 -h'
+alias dush='du -sh .'
 
 #
 # Git autocomplete
