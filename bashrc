@@ -1,3 +1,20 @@
+function running_osx() {
+  uname -a | grep -qi darwin
+}
+
+function running_linux() {
+  uname -a | grep -qi linux
+}
+
+if running_linux; then
+  eval `keychain --eval --quiet --quick --agents ssh`
+  function add_all_ssh_keys() {
+    ssh-add $(grep -lR PRIVATE ~/.ssh)
+  }
+  alias ssh="(ssh-add -l > /dev/null || add_all_ssh_keys ) && ssh"
+fi
+
+
 #
 # Ignore duplicates and lines that start with spaces in bash history
 #
