@@ -6,6 +6,9 @@ function running_linux() {
   uname -a | grep -qi linux
 }
 
+#
+# Set up ssh keys
+#
 if running_linux; then
   eval `keychain --eval --quiet --quick --agents ssh`
   function add_all_ssh_keys() {
@@ -73,6 +76,10 @@ alias cap='bundle exec cap'
 alias pjson='python -mjson.tool'
 alias dud='du -d 1 -h'
 alias dush='du -sh .'
+
+if running_linux; then
+  alias open='xdg-open'
+fi
 
 #
 # Git autocomplete
