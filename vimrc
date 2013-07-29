@@ -5,17 +5,19 @@ syntax on
 filetype off
 filetype plugin indent on
 
+runtime macros/matchit.vim
+
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let mapleader = ","
 
 set nocompatible
-
 set pastetoggle=<F2>
-
 set number
-
 set foldmethod=syntax
+set foldlevel=100
+set hidden
+set ruler
 
 "
 " Colorscheme
@@ -58,9 +60,6 @@ set noerrorbells
 set wildmenu
 
 set scrolloff=10
-
-set foldmethod=syntax
-set foldlevel=100
 
 " /g when searching and replacing
 set gdefault
