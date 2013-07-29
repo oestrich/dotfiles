@@ -1,4 +1,0 @@
-#!/bin/bash
-
-host=`hostname -s`
-tmux attach -t ${host}-work

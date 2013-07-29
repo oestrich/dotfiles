@@ -75,8 +75,6 @@ let g:session_autoload="no"
 " Toggle number
 nnoremap <F3> :set nonumber!<CR>
 
-map <Leader>t :CommandT<CR>
-map <Leader>f :CommandTFlush<CR>
 map <leader>m :BufExplorer<CR>
 map <Leader>a :Ack 
 map <Leader><Space> :noh<CR>
@@ -101,9 +99,6 @@ map <S-W> <Plug>CamelCaseMotion_w
 map <S-B> <Plug>CamelCaseMotion_b
 map <S-E> <Plug>CamelCaseMotion_e
 
-" CommandT
-let g:CommandTMaxHeight=20
-
 " Kill help key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -121,32 +116,5 @@ nnoremap <Leader>` :source $MYVIMRC<CR>
 " Remove trailing whitespace
 nnoremap <Leader>ts :%s/\s\+$//<CR>
 
-"
-" Rails
-"
-
-" Custom shit for Rails.vim 
-autocmd User Rails Rnavcommand uploader app/uploaders -suffix=_uploader.rb -default=model()
-autocmd User Rails Rnavcommand steps features/step_definitions -suffix=_steps.rb -default=web
-autocmd User Rails Rnavcommand blueprint spec/blueprints -suffix=_blueprint.rb -default=model()
-autocmd User Rails Rnavcommand factory spec/factories -suffix=_factory.rb -default=model()
-autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
-autocmd User Rails Rnavcommand feature features -suffix=.feature -default=cucumber
-autocmd User Rails Rnavcommand support spec/support features/support -default=env
-
-"
-" Cucumber
-"
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/\\\@<!|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
+" re-indent xml
+map <F4> :%s/>\s*</>\r</g<CR>:set ft=xml<CR>gg=G
