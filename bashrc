@@ -115,10 +115,10 @@ dcd() {
 complete -F _dcd dcd
 
 _scd() {
-  _complete sls
+  _complete sl
 }
 scd() {
-  cd ~/prog/sls/$1
+  cd ~/prog/sl/$1
 }
 complete -F _scd scd
 
