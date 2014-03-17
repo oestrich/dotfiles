@@ -5,3 +5,4 @@
 --type-set=yml=.yml
 --smart-case
 
+--ignore-dir=tmp
