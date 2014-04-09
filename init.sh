@@ -42,6 +42,11 @@ if [ ! -e ~/.slate ]; then
   ln -s ~/dotfiles/slate ~/.slate
 fi
 
+# postgres
+if [ ! -e ~/.psqlrc ]; then
+  ln -s ~/dotfiles/psqlrc ~/.psqlrc
+fi
+
 # bashrc
 bashgrep=$(grep "source ~/dotfiles/bashrc" ~/.bashrc)
 if [ "$bashgrep" != "source ~/dotfiles/bashrc" ]; then
