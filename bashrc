@@ -106,14 +106,6 @@ _complete() {
   fi
 }
 
-_dcd() {
-  _complete divbot
-}
-dcd() {
-  cd ~/prog/divbot/$1
-}
-complete -F _dcd dcd
-
 _scd() {
   _complete sl
 }
@@ -129,3 +121,11 @@ srcd() {
   cd ~/prog/src/$1
 }
 complete -F _srcd srcd
+
+_pcd() {
+  _complete personal
+}
+pcd() {
+  cd ~/prog/personal/$1
+}
+complete -F _pcd pcd
