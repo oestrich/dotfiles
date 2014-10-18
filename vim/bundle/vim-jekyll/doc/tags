@@ -1,0 +1,17 @@
+g:jekyll_build_command	jekyll.txt	/*g:jekyll_build_command*
+g:jekyll_post_dirs	jekyll.txt	/*g:jekyll_post_dirs*
+g:jekyll_post_extension	jekyll.txt	/*g:jekyll_post_extension*
+g:jekyll_post_filetype	jekyll.txt	/*g:jekyll_post_filetype*
+g:jekyll_post_template	jekyll.txt	/*g:jekyll_post_template*
+g:jekyll_site_dir	jekyll.txt	/*g:jekyll_site_dir*
+jekyll	jekyll.txt	/*jekyll*
+jekyll-:JSpost	jekyll.txt	/*jekyll-:JSpost*
+jekyll-:JTpost	jekyll.txt	/*jekyll-:JTpost*
+jekyll-:JVpost	jekyll.txt	/*jekyll-:JVpost*
+jekyll-:Jbuild	jekyll.txt	/*jekyll-:Jbuild*
+jekyll-:Jpost	jekyll.txt	/*jekyll-:Jpost*
+jekyll-about	jekyll.txt	/*jekyll-about*
+jekyll-commands	jekyll.txt	/*jekyll-commands*
+jekyll-configuration	jekyll.txt	/*jekyll-configuration*
+jekyll-license	jekyll.txt	/*jekyll-license*
+jekyll.txt	jekyll.txt	/*jekyll.txt*

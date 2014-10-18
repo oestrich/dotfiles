@@ -120,3 +120,6 @@ map <F4> :%s/>\s*</>\r</g<CR>:set ft=xml<CR>gg=G
 
 " easier quickfix list navigation
 nnoremap <Leader>n :cn<CR>
+
+" vim-jekyll
+let g:jekyll_post_extension = '.md'
