@@ -23,9 +23,9 @@ set ruler
 " Colorscheme
 "
 set t_Co=256
-"set background=dark
-"let g:solarized_termtrans=1
-colorscheme molokai-transparent
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
 
 "
 " Show trailing spaces
