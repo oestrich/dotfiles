@@ -25,7 +25,7 @@ set ruler
 set t_Co=256
 "set background=dark
 "let g:solarized_termtrans=1
-colorscheme molokai
+colorscheme molokai-transparent
 
 "
 " Show trailing spaces
@@ -136,3 +136,6 @@ augroup pencil
   autocmd FileType markdown set background=light
   autocmd FileType markdown colorscheme pencil
 augroup END
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
