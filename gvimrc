@@ -1,6 +1,8 @@
-set guioptions-=T
-set guioptions-=m
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
-set gfn=Monospace\ 12
+set gfn=Cousine\ 14
 
-colorscheme solarized
+colorscheme molokai

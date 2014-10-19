@@ -23,9 +23,9 @@ set ruler
 " Colorscheme
 "
 set t_Co=256
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+"set background=dark
+"let g:solarized_termtrans=1
+colorscheme molokai
 
 "
 " Show trailing spaces
@@ -121,5 +121,18 @@ map <F4> :%s/>\s*</>\r</g<CR>:set ft=xml<CR>gg=G
 " easier quickfix list navigation
 nnoremap <Leader>n :cn<CR>
 
+" always display the status line
+set laststatus=2
+
 " vim-jekyll
 let g:jekyll_post_extension = '.md'
+let g:jekyll_build_command = 'jekyll build'
+
+" vim-pencil
+let g:pencil#wrapModeDefault = 'soft'
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType markdown set background=light
+  autocmd FileType markdown colorscheme pencil
+augroup END
