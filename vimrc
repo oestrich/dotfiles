@@ -50,7 +50,7 @@ set hlsearch
 "
 " Backup files
 "
-set backup
+set nobackup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 
@@ -120,6 +120,9 @@ map <F4> :%s/>\s*</>\r</g<CR>:set ft=xml<CR>gg=G
 
 " easier quickfix list navigation
 nnoremap <Leader>n :cn<CR>
+
+" coffeescript folding
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " always display the status line
 set laststatus=2

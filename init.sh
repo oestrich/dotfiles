@@ -31,6 +31,9 @@ fi
 if [ ! -e ~/.irbrc ]; then
   ln -s ~/dotfiles/irbrc ~/.irbrc
 fi
+if [ ! -e ~/.pryrc ]; then
+  ln -s ~/dotfiles/pryrc ~/.pryrc
+fi
 
 # ackrc
 if [ ! -e ~/.ackrc ]; then

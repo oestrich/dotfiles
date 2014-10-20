@@ -77,6 +77,7 @@ alias cap='bundle exec cap'
 alias pjson='python -mjson.tool'
 alias dud='du -d 1 -h'
 alias dush='du -sh .'
+alias adb-screenshot='adb shell screencap -p | sed 's/\r$//' > screen.png'
 
 if running_linux; then
   alias open='xdg-open'
