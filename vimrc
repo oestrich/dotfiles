@@ -140,5 +140,7 @@ augroup pencil
   autocmd FileType markdown colorscheme pencil
 augroup END
 
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+" let g:airline_left_sep = ''
+" let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
