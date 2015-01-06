@@ -130,3 +130,7 @@ pcd() {
   cd ~/prog/personal/$1
 }
 complete -F _pcd pcd
+
+battery() {
+  upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | cut -d : -f2 | sed -e 's/^[ \t]*//'
+}
