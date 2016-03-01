@@ -64,6 +64,9 @@ set scrolloff=10
 " /g when searching and replacing
 set gdefault
 
+" have the split open below the current window
+set splitbelow
+
 " disable autoload of session
 let g:session_autoload="no"
 
@@ -132,15 +135,18 @@ let g:jekyll_post_extension = '.md'
 let g:jekyll_build_command = 'jekyll build'
 
 " vim-pencil
-let g:pencil#wrapModeDefault = 'soft'
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd FileType markdown set background=light
-  autocmd FileType markdown colorscheme pencil
-augroup END
+"let g:pencil#wrapModeDefault = 'soft'
+"augroup pencil
+"  autocmd!
+"  autocmd FileType markdown call pencil#init()
+"  autocmd FileType markdown set background=light
+"  autocmd FileType markdown colorscheme pencil
+"augroup END
 
 " let g:airline_left_sep = ''
 " let g:airline_right_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+" disable logipat
+let g:loaded_logipat = 1
