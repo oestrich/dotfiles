@@ -150,3 +150,5 @@ let g:airline_right_sep = ''
 
 " disable logipat
 let g:loaded_logipat = 1
+
+cnoreabbrev E Explore

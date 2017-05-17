@@ -3,6 +3,4 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-set gfn=Droid\ Sans\ Mono\ 16
-
-colorscheme molokai
+set gfn=Cousine:h18
