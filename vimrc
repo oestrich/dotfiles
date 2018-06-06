@@ -78,9 +78,8 @@ let g:session_autoload="no"
 nnoremap <F3> :set nonumber!<CR>
 
 map <leader>m :BufExplorer<CR>
-map <Leader>a :Ack 
+map <Leader>a :Ggrep 
 map <Leader><Space> :noh<CR>
-nnoremap <F5> :GundoToggle<CR>
 
 " Tabs
 map <c-w>t :tabnew<CR>
@@ -130,21 +129,6 @@ autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 " always display the status line
 set laststatus=2
 
-" vim-jekyll
-let g:jekyll_post_extension = '.md'
-let g:jekyll_build_command = 'jekyll build'
-
-" vim-pencil
-"let g:pencil#wrapModeDefault = 'soft'
-"augroup pencil
-"  autocmd!
-"  autocmd FileType markdown call pencil#init()
-"  autocmd FileType markdown set background=light
-"  autocmd FileType markdown colorscheme pencil
-"augroup END
-
-" let g:airline_left_sep = ''
-" let g:airline_right_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 

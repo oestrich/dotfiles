@@ -32,3 +32,5 @@
     ll = log --oneline -n 5
 [push]
 	default = simple
+[interactive]
+	singleKey = no
