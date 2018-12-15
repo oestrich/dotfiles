@@ -31,6 +31,6 @@
     full-stash = stash --include-untracked
     ll = log --oneline -n 5
 [push]
-	default = simple
+    default = simple
 [interactive]
-	singleKey = no
+    singleKey = no
