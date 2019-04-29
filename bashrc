@@ -12,7 +12,7 @@ function running_linux() {
 if running_linux; then
   eval `keychain --eval --quiet --quick --agents ssh`
   function add_all_ssh_keys() {
-    ssh-add $(grep -lR PRIVATE ~/.ssh)
+    ssh-add ~/.ssh/id_rsa
   }
   alias ssh="(ssh-add -l > /dev/null || add_all_ssh_keys ) && ssh"
 fi
@@ -22,6 +22,9 @@ fi
 # Ignore duplicates and lines that start with spaces in bash history
 #
 HISTCONTROL=ignorespace:ignoredups
+
+# Erlang history
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 #
 # vi command prompt
