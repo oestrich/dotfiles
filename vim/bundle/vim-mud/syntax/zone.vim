@@ -11,8 +11,9 @@ syn case match
 
 syn keyword zoneSection nextgroup=zoneSectionTypeStr skipwhite
 \ zones
-\ rooms room_exits
-\ npcs
+\ rooms room_exits room_characters
+\ characters
+\ items
 syn region zoneSectionTypeStr start=/"/ end=/"/ nextgroup=zoneSectionBlock skipwhite
 syn region zoneSectionBlock start=/{/ end=/}/ fold contains=@zoneConfigItem
 

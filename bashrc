@@ -62,6 +62,8 @@ PS1="$GREEN\u@\h$NO_C:[$BLUE\w$YELLOW$GITBRANCH$NO_C]\$ "
 #
 export AUTOFEATURE=true
 export EDITOR='vim'
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
 
 #
 # Alias
@@ -100,14 +102,30 @@ export PATH=~/dotfiles/bin:~/sync/bin:$PATH
 # Custom cds
 #
 _complete() {
-  local cur folders
-  COMREPLY=()
+  local cur folders opts temp
+  COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
-  folders=`ls ~/prog/${1}/`
-  if [[ ${#COMP_WORDS[@]} -le 2 ]]; then
-    COMPREPLY=( $(compgen -W "${folders}" -- ${cur}) )
-    return 0
-  fi
+
+  folders=`ls -p ~/prog/${1}`
+  folders=`echo $folders | tr '/' " "`
+  read -r -a folders <<< "${folders}"
+
+  opts=""
+
+  for i in "${!folders[@]}"; do
+    folder=${folders[$i]}
+    temp=`ls -p ~/prog/${1}/${folder}`
+    temp=`echo $temp | tr '/' " "`
+    read -r -a temp <<< "${temp}"
+
+    opts+="${folder}/ "
+    for i in "${!temp[@]}"; do
+      opts+="${folder}/${temp[$i]} "
+    done
+  done
+
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
 }
 
 _scd() {
