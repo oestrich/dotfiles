@@ -15,7 +15,7 @@ syn keyword zoneSection nextgroup=zoneSectionTypeStr skipwhite
 \ characters
 \ items
 syn region zoneSectionTypeStr start=/"/ end=/"/ nextgroup=zoneSectionBlock skipwhite
-syn region zoneSectionBlock start=/{/ end=/}/ fold contains=@zoneConfigItem
+syn region zoneSectionBlock matchgroup=zoneBraces start="{" end="}" fold contains=@zoneConfigItem
 
 syn match  zoneCommentSingle "#.*$"
 syn match  zoneAssignment    "\<[a-z][a-z0-9_-]*\>" contained skipwhite
@@ -27,7 +27,7 @@ syn region  zoneCommentMulti start=/\/\*/ end=/\*\//
 syn region  zoneValueString  start=/"/    end=/"/  skip=/\v\\./   contains=zoneStringInterp
 syn region  zoneStringInterp matchgroup=zoneBrackets start=/\${/  end=/}/ contained
 syn keyword zoneValueBool true false
-syn match zoneBraces        "[\[\]{}]"
+syn match   zoneBraces        "[\[\]{}]"
 
 
 syn cluster zoneConfigItem contains=zoneAssignment
