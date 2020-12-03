@@ -36,3 +36,5 @@
     default = simple
 [interactive]
     singleKey = no
+[pull]
+	rebase = false

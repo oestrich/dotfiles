@@ -11,6 +11,7 @@ syn case match
 
 syn keyword zoneSection skipwhite
       \ characters
+      \ features
       \ items
       \ rooms room_exits room_characters
       \ zones

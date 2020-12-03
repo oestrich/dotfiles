@@ -96,7 +96,7 @@ source ~/dotfiles/git-complete.sh
 #
 # For custom scripts
 #
-export PATH=~/dotfiles/bin:~/sync/bin:$PATH
+export PATH=~/dotfiles/bin:$PATH
 
 #
 # Custom cds
@@ -135,6 +135,8 @@ scd() {
   cd ~/prog/sl/$1
 }
 complete -F _scd scd
+
+complete -F _scd sl
 
 _srcd() {
   _complete src
