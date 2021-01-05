@@ -5,7 +5,8 @@
 [core]
     editor = vim
     excludesfile = /Users/eric/.gitignore_global
-    quotepath = false
+	quotepath = false
+	commitGraph = true
 
 [color]
     branch = auto
@@ -36,5 +37,9 @@
     default = simple
 [interactive]
     singleKey = no
+
 [pull]
 	rebase = false
+
+[gc]
+	writeCommitGraph = true
