@@ -5,8 +5,10 @@ call plug#begin()
 
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bkad/CamelCaseMotion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-projectionist'
+Plug 'sainnhe/sonokai'
 Plug 'tpope/vim-surround'
 
 call plug#end()
@@ -23,8 +25,6 @@ let mapleader = ","
 
 set nocompatible
 set pastetoggle=<F2>
-set number
-set foldmethod=syntax
 set foldlevel=100
 set hidden
 set ruler
@@ -33,9 +33,9 @@ set ruler
 " Colorscheme
 "
 set t_Co=256
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+"set background=dark
+"let g:solarized_termtrans=1
+colorscheme sonokai
 
 "
 " Show trailing spaces
@@ -86,6 +86,7 @@ let g:session_autoload="no"
 
 " Toggle number
 nnoremap <F3> :set nonumber!<CR>
+set number
 
 map <leader>m :BufExplorer<CR>
 map <Leader>a :Ggrep 
