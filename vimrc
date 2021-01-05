@@ -1,6 +1,16 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+call plug#begin()
+
+Plug 'jlanzarotta/bufexplorer'
+Plug 'bkad/CamelCaseMotion'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
 syntax on
 filetype off
 filetype plugin indent on
@@ -128,9 +138,6 @@ autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " always display the status line
 set laststatus=2
-
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
 
 " disable logipat
 let g:loaded_logipat = 1
