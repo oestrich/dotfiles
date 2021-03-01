@@ -105,6 +105,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 
 " CamelCaseMotion
+let g:camelcasemotion_key = '<leader>'
 map <S-W> <Plug>CamelCaseMotion_w
 map <S-B> <Plug>CamelCaseMotion_b
 map <S-E> <Plug>CamelCaseMotion_e

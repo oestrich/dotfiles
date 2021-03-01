@@ -44,3 +44,5 @@
 
 [gc]
     writeCommitGraph = true
+[rebase]
+	autosquash = true
