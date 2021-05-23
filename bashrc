@@ -154,6 +154,7 @@ pcd() {
 }
 complete -F _pcd pcd
 
+complete -F _pcd pp
 
 battery() {
   upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | cut -d : -f2 | sed -e 's/^[ \t]*//'
@@ -161,4 +162,12 @@ battery() {
 
 pg_schema() {
   pg_dump -s $1 > schema.sql
+}
+
+function tentimes() {
+  for i in {1..10}; do "$@"; done
+}
+
+function hundredtimes() {
+  for i in {1..100}; do "$@"; done
 }

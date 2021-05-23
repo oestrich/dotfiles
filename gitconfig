@@ -3,7 +3,7 @@
     email = eric@oestrich.org
 
 [core]
-	editor = nvim
+    editor = vim
     excludesfile = /Users/eric/.gitignore_global
     quotepath = false
     commitGraph = true
@@ -30,6 +30,14 @@
     changed = green
     untracked = cyan
 
+# [pager]
+#     log = delta
+#     reflog = delta
+#     show = delta
+
+#[interactive]
+#    diffFilter = delta --color-only
+
 [alias]
     full-stash = stash --include-untracked
     ll = log --oneline -n 5
@@ -45,4 +53,6 @@
 [gc]
     writeCommitGraph = true
 [rebase]
-	autosquash = true
+    autosquash = true
+[init]
+    defaultBranch = main
