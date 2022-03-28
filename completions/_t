@@ -1,0 +1,11 @@
+#compdef _t t
+
+function _t {
+    _arguments "1::folder:->folder"
+
+    case $state in
+        folder)
+            _files -/ -F "*/*/*" -W ~/prog/
+            ;;
+    esac
+}
