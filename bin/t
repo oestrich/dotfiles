@@ -1,0 +1,18 @@
+#!/bin/bash
+
+folder=${1}
+project=${folder}
+
+tmux new -s ${project} -d
+
+tmux send-keys -t ${project}:0.0 "cd prog/${folder}" Enter
+tmux send-keys -t ${project}:0.0 "nvim" Enter
+
+tmux new-window -t ${project}
+tmux send-keys -t ${project}:1.0 "cd prog/${folder}" Enter
+
+tmux new-window -t ${project}
+
+tmux send-keys -t ${project}:2.0 "cd prog/${folder}" Enter
+
+tmux attach -t ${project}:1
