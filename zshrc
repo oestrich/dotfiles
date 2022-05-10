@@ -8,6 +8,8 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
+bindkey '^R' history-incremental-search-backward
+
 # Exports
 export EDITOR='vim'
 export ERL_AFLAGS="-kernel shell_history enabled"
