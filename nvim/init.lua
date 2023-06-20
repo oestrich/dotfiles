@@ -7,12 +7,19 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd [[
+let g:polyglot_disabled = ['sensible']
+]]
+
 require("lazy").setup({
+--   { "bkad/CamelCaseMotion" },
+  { "chaoren/vim-wordmotion" },
   { "dstein64/vim-startuptime" },
   { "echasnovski/mini.comment", version = false },
   { "echasnovski/mini.indentscope", version = false },
   { "ggandor/leap.nvim" },
   { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  { "jlanzarotta/bufexplorer" },
   { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
   { "navarasu/onedark.nvim" },
   { "nvim-telescope/telescope.nvim", tag = "0.1.1", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -31,6 +38,7 @@ require("lazy").setup({
     end,
   },
   { "RRethy/vim-illuminate" },
+  { "sheerun/vim-polyglot" },
   { "tpope/vim-projectionist" },
   { "tpope/vim-repeat" },
 })
@@ -61,10 +69,35 @@ opt.spelllang = { "en" }
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
 opt.wrap = false -- Disable line wrap
+opt.autoindent = true
+opt.backup = false
+opt.gdefault = true
+vim.opt.splitbelow = true
 
 --
 -- keymaps
 --
+
+-- CamelCaseMotion
+-- vim.cmd [[
+--   omap <silent> iw <Plug>CamelCaseMotion_iw
+--   xmap <silent> iw <Plug>CamelCaseMotion_iw
+--   omap <silent> ib <Plug>CamelCaseMotion_ib
+--   xmap <silent> ib <Plug>CamelCaseMotion_ib
+--   omap <silent> ie <Plug>CamelCaseMotion_ie
+--   xmap <silent> ie <Plug>CamelCaseMotion_ie
+-- ]]
+-- vim.keymap.set('n', 'W', '<Plug>CamelCaseMotion_w', { silent = true })
+-- vim.keymap.set('n', 'B', '<Plug>CamelCaseMotion_b', { silent = true })
+-- vim.keymap.set('n', 'E', '<Plug>CamelCaseMotion_e', { silent = true })
+
+vim.keymap.set("n", "K", "<Nop>")
+vim.keymap.set("v", "K", "<Nop>")
+
+vim.keymap.set("n", "<leader><space>", ":noh<CR>")
+
+-- BufExplorer
+vim.keymap.set("", "<leader>m", ":BufExplorer<CR>")
 
 -- Move to window using the <ctrl> hjkl keys
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
@@ -90,6 +123,8 @@ vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 vim.keymap.set("n", "<C-w>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<C-w>|", "<C-W>v", { desc = "Split window right" })
 
+
+vim.cmd("cnoreabbrev E Explore")
 
 --
 -- autocmd
