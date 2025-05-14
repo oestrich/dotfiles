@@ -1,52 +1,22 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
--- require("config.lazy")
-
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable"})
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[
-let g:polyglot_disabled = ['sensible']
-]]
-
-require("lazy").setup({
---   { "bkad/CamelCaseMotion" },
-  { "chaoren/vim-wordmotion" },
-  { "dstein64/vim-startuptime" },
-  { "echasnovski/mini.comment", version = false },
-  { "echasnovski/mini.indentscope", version = false },
-  { "ggandor/leap.nvim" },
-  { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-  { "jlanzarotta/bufexplorer" },
-  { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
-  { "navarasu/onedark.nvim" },
-  { "nvim-telescope/telescope.nvim", tag = "0.1.1", dependencies = { "nvim-lua/plenary.nvim" } },
-  { "nvim-treesitter/nvim-treesitter",
-    lazy = true,
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      ensure_installed = "all",
-      ignore_install = { "haskell", "phpdoc" },
-      highlight = { enable = true },
-      indent = { enable = true },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-  },
-  { "RRethy/vim-illuminate" },
-  { "sheerun/vim-polyglot" },
-  { "tpope/vim-projectionist" },
-  { "tpope/vim-repeat" },
-})
-
---
--- options
---
-
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
@@ -72,24 +42,43 @@ opt.wrap = false -- Disable line wrap
 opt.autoindent = true
 opt.backup = false
 opt.gdefault = true
-vim.opt.splitbelow = true
+opt.splitbelow = true
+
+require("lazy").setup({
+  { "chaoren/vim-wordmotion" },
+  { "dstein64/vim-startuptime" },
+  { "echasnovski/mini.comment", version = false },
+  { "echasnovski/mini.indentscope", version = false },
+  { "ggandor/leap.nvim" },
+  { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  { "jlanzarotta/bufexplorer" },
+  { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
+  { "navarasu/onedark.nvim" },
+  { "nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "nvim-treesitter/nvim-treesitter",
+    lazy = true,
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      ensure_installed = "all",
+      ignore_install = { "haskell", "phpdoc" },
+      highlight = { enable = true },
+      indent = { enable = true },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
+  { "RRethy/vim-illuminate" },
+  { "sheerun/vim-polyglot" },
+  { "tpope/vim-projectionist" },
+  { "tpope/vim-repeat" },
+})
+
 
 --
 -- keymaps
 --
-
--- CamelCaseMotion
--- vim.cmd [[
---   omap <silent> iw <Plug>CamelCaseMotion_iw
---   xmap <silent> iw <Plug>CamelCaseMotion_iw
---   omap <silent> ib <Plug>CamelCaseMotion_ib
---   xmap <silent> ib <Plug>CamelCaseMotion_ib
---   omap <silent> ie <Plug>CamelCaseMotion_ie
---   xmap <silent> ie <Plug>CamelCaseMotion_ie
--- ]]
--- vim.keymap.set('n', 'W', '<Plug>CamelCaseMotion_w', { silent = true })
--- vim.keymap.set('n', 'B', '<Plug>CamelCaseMotion_b', { silent = true })
--- vim.keymap.set('n', 'E', '<Plug>CamelCaseMotion_e', { silent = true })
 
 vim.keymap.set("n", "K", "<Nop>")
 vim.keymap.set("v", "K", "<Nop>")
@@ -122,7 +111,6 @@ vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 vim.keymap.set("n", "<C-w>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<C-w>|", "<C-W>v", { desc = "Split window right" })
-
 
 vim.cmd("cnoreabbrev E Explore")
 
@@ -216,7 +204,7 @@ require("ufo").setup({
   provider_selector = function(bufnr, filetype, buftype)
     return { "treesitter", "indent" }
   end,
-})
+ })
 
 require("onedark").setup({
   style = "darker"
@@ -229,8 +217,7 @@ require("telescope").setup({
 })
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 
 require("leap").add_default_mappings(true)
 
