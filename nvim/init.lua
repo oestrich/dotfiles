@@ -1,3 +1,6 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -53,7 +56,6 @@ require("lazy").setup({
   { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
   { "jlanzarotta/bufexplorer" },
   { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
-  { "navarasu/onedark.nvim" },
   { "nvim-telescope/telescope.nvim", tag = "0.1.8", dependencies = { "nvim-lua/plenary.nvim" } },
   { "nvim-treesitter/nvim-treesitter",
     lazy = true,
@@ -72,7 +74,26 @@ require("lazy").setup({
   { "RRethy/vim-illuminate" },
   { "sheerun/vim-polyglot" },
   { "tpope/vim-projectionist" },
-  { "tpope/vim-repeat" },
+  { "nvim-tree/nvim-tree.lua" },
+  { "rebelot/kanagawa.nvim" },
+  { "EdenEast/nightfox.nvim" },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    "mistweaverco/kulala.nvim",
+    keys = {
+      { "<leader>Rs", desc = "Send request" },
+      { "<leader>Ra", desc = "Send all requests" },
+      { "<leader>Rb", desc = "Open scratchpad" },
+    },
+    ft = {"http", "rest"},
+    opts = {
+      -- your configuration comes here
+      global_keymaps = true,
+    },
+  },
 })
 
 
@@ -105,8 +126,6 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- windows
-vim.keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
-vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 vim.keymap.set("n", "<C-w>-", "<C-W>s", { desc = "Split window below" })
@@ -206,12 +225,6 @@ require("ufo").setup({
   end,
  })
 
-require("onedark").setup({
-  style = "darker"
-})
-
-require("onedark").load()
-
 require("telescope").setup({
   defaults = { file_ignore_patterns = { "node_modules", "_build", "deps", "tmp" } }
 })
@@ -236,3 +249,76 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("alpha").setup(require("alpha.themes.startify").config)
+
+require("nvim-tree").setup({
+  disable_netrw = true,
+  hijack_netrw = true,
+  hijack_cursor = false,
+  view = {
+    side = 'right',
+    width = 40,
+  },
+  update_focused_file = {
+    enable = true,
+    update_root = false,
+  },
+})
+
+local function open_nvim_tree(data)
+  
+  -- buffer is a real file on the disk
+  local real_file = vim.fn.filereadable(data.file) == 1
+
+  -- buffer is a [No Name]
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+  if not real_file or no_name then
+    return
+  end
+
+  local tree = require("nvim-tree.api").tree
+
+  if not tree.is_visible then
+    tree.toggle({ focus = false, find_file = true, })
+  end
+end
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, { callback = open_nvim_tree })
+
+local function toggle_tree(data)
+  local tree = require("nvim-tree.api").tree
+  tree.toggle({ focus = false, find_file = true, })
+end
+
+vim.keymap.set('n', '<leader>t', toggle_tree)
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "kanagawa",
+    callback = function()
+        if vim.o.background == "light" then
+            vim.fn.system("kitty +kitten themes Kanagawa_light")
+        elseif vim.o.background == "dark" then
+            vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+        else
+            vim.fn.system("kitty +kitten themes Kanagawa")
+        end
+    end,
+})
+
+vim.api.nvim_set_hl(0, "@string.special.symbol", { link = "Atom" })
+
+-- vim.cmd('hi @string.special.symbol.elixir guifg=Red')
+
+require('kanagawa').setup({
+  overrides = function(colors)
+    return {
+      ["@string.special.symbol"] = { fg = colors.theme.syn.special3 },
+    }
+  end,
+})
+
+vim.cmd("colorscheme kanagawa")
+
+require('lualine').setup()
+
+vim.api.nvim_set_option("clipboard","unnamed")
